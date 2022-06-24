@@ -1,0 +1,70 @@
+{
+  "facilitys": [],
+  "customers": [
+    {
+      "code": "KH-1111",
+      "name": "Nguyễn Văn A",
+      "birthDay": "1990-01-01",
+      "gender": "Male",
+      "idCard": "123654789",
+      "numberPhone": "0901234567",
+      "email": "a2@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": "Diamond",
+      "id": 1
+    },
+    {
+      "code": "KH-2222",
+      "name": "Nguyễn Văn B",
+      "birthDay": "1990-01-01",
+      "gender": "Male",
+      "idCard": "987456321",
+      "numberPhone": "0911234567",
+      "email": "b2@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": "Silver",
+      "id": 2
+    },
+    {
+      "code": "KH-3333",
+      "name": "Nguyễn Văn C",
+      "birthDay": "1990-02-02",
+      "gender": "Male",
+      "idCard": "123456988",
+      "numberPhone": "0901236548",
+      "email": "c2@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": "Diamond",
+      "id": 3
+    },
+    {
+      "code": "KH-4444",
+      "name": "Nguyễn Văn D",
+      "birthDay": "1990-01-02",
+      "gender": "Male",
+      "idCard": "999999999",
+      "numberPhone": "0909874563",
+      "email": "d2@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": "Diamond",
+      "id": 4
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

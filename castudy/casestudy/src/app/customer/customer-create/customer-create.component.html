@@ -1,0 +1,114 @@
+<h1 style="text-align: center">Create Customer</h1>
+<div class="container">
+<form  [formGroup]="customerForm" (ngSubmit)="submit()">
+
+  <div class="form-group">
+<!--    <div class="form-group">-->
+<!--      <label for="formGroupExampleInput">Example label</label>-->
+<!--      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">-->
+<!--    </div>-->
+
+    <label for="code" >Code</label>
+    <input type="text"  formControlName="code" class="form-control" id="code"  placeholder="Enter Code">
+<!--    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    <small *ngIf="customerForm.controls.code.hasError('required') && customerForm.controls.code.touched" style="color: red">
+      * Cannot be left blank
+    </small>
+    <small *ngIf="customerForm.controls.code.hasError('pattern')" style="color: red">
+      * Malformed (KH-XXXX)
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="code">Name</label>
+    <input type="text"  formControlName="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Name">
+    <small *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.touched" style="color: red">
+      * Cannot be left blank
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="code">Birth Day</label>
+    <input type="text"  formControlName="birthDay" class="form-control" id="birthDay" aria-describedby="emailHelp" placeholder="Enter BirthDay">
+    <small *ngIf="customerForm.controls.birthDay.hasError('required') && customerForm.controls.birthDay.touched" style="color: red">
+      * Cannot be left blank
+    </small>
+    <small *ngIf="customerForm.controls.birthDay.hasError('pattern')" style="color: red">
+      * Malformed (yyyy/MM/dd)
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="gender" >Gender</label>
+    <select class="form-control" id="gender" formControlName="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+    <small *ngIf="customerForm.controls.gender.hasError('required') && customerForm.controls.gender.touched" style="color: red">
+      * Cannot be left blank
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="code">Id Card</label>
+    <input type="text"  formControlName="idCard" class="form-control" id="idCard" aria-describedby="emailHelp" placeholder="Enter Id Card">
+    <small *ngIf="customerForm.controls.idCard.hasError('required') && customerForm.controls.idCard.touched" style="color: red">
+      * Cannot be left blank
+    </small>
+    <small *ngIf="customerForm.controls.idCard.hasError('pattern')" style="color: red">
+      * Malformed (9 characters)
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="code">Number Phone</label>
+    <input type="text"  formControlName="numberPhone" class="form-control" id="numberPhone" aria-describedby="emailHelp" placeholder="Enter Number Phone">
+    <small *ngIf="customerForm.controls.numberPhone.hasError('required') && customerForm.controls.numberPhone.touched" style="color: red">
+      * Cannot be left blank
+    </small>
+    <small *ngIf="customerForm.controls.numberPhone.hasError('pattern')" style="color: red">
+      * Malformed
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="code">Email</label>
+    <input type="text"  formControlName="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
+    <!--    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    <small *ngIf="customerForm.controls.email.hasError('required') && customerForm.controls.email.touched" style="color: red">
+      * Cannot be left blank
+    </small>
+    <small *ngIf="customerForm.controls.email.hasError('pattern')" style="color: red">
+      * Malformed
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="code">Address</label>
+    <input type="text"  formControlName="address" class="form-control" id="address" aria-describedby="emailHelp" placeholder="Enter Address">
+    <small *ngIf="customerForm.controls.address.hasError('required') && customerForm.controls.address.touched" style="color: red">
+      * Cannot be left blank
+    </small>
+  </div>
+
+
+  <div class="form-group">
+    <label for="customerType">Customer Type</label>
+    <select class="form-control" id="customerType" formControlName="customerType">
+      <option value="Diamond">Diamond</option>
+      <option value="Platinium">Platinium</option>
+      <option value="Gold">Gold</option>
+      <option value="Silver">Silver</option>
+      <option value="Member">Member</option>
+    </select>
+    <small *ngIf="customerForm.controls.customerType.hasError('required') && customerForm.controls.customerType.touched" style="color: red">
+      * Cannot be left blank
+    </small>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+</div>
+
+
