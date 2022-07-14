@@ -1,5 +1,20 @@
 {
-  "facilitys": [],
+  "facilitys": [
+    {
+      "name": "ggg",
+      "area": "44",
+      "cost": "44",
+      "maxPeople": "4",
+      "rentType": "gg",
+      "romStandard": "gg",
+      "otherAamenities": "gg",
+      "poolArea": "44",
+      "numberFloors": "4",
+      "freeServiceIncluded": "gg",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg",
+      "id": 1
+    }
+  ],
   "customers": [
     {
       "code": "KH-1111",

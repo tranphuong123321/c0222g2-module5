@@ -15,5 +15,5 @@ export interface Facility {
   poolArea: string;
   numberFloors: string;
   freeServiceIncluded: string;
-  img: any;
+  img: string;
 }

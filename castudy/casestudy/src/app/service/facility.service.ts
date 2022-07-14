@@ -21,4 +21,7 @@ export class FacilityService {
   saveFacility(facility): Observable<Facility> {
     return this.http.post<Facility>(API_URL + '/facilitys', facility);
   }
+  deleteFacility(id: number): Observable<Facility> {
+    return this.http.delete<Facility>(`${API_URL}/facilitys/${id}`);
+  }
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Customer} from "../../model/customer";
-import {CustomerService} from "../../service/customer.service";
+
 import {Router} from "@angular/router";
 import {Facility} from "../../model/facility";
 import {FacilityService} from "../../service/facility.service";
@@ -13,9 +12,8 @@ import {FacilityService} from "../../service/facility.service";
 export class FacilityListComponent implements OnInit {
 
   facilitys: Facility[] = [];
-
-  // idToDelete: number;
-  // nameToDelete: string;
+  idToDelete: number;
+  nameToDelete: string;
 
   constructor(private facilityService: FacilityService,
               private router: Router) { }
@@ -30,11 +28,13 @@ export class FacilityListComponent implements OnInit {
   }
 
 
-  // public deleteCustomer() {
-  //   this.customerService.deleteCustomer(this.idToDelete).subscribe((data) => {
-  //     this.getCustomer();
-  //   });
-  // }
-
-
+  public deleteFacility() {
+    this.facilityService.deleteFacility(this.idToDelete).subscribe((data) => {
+      this.getFacility();
+    });
+  }
+  showMess(id: any, name: any) {
+    this.idToDelete = id;
+    this.nameToDelete = name;
+  }
 }

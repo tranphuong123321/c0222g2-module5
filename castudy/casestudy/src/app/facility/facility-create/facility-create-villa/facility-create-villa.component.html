@@ -1,0 +1,59 @@
+<div class="container">
+<form  [formGroup]="villaForm" (ngSubmit)="submit()">
+
+
+  <div class="form-group">
+    <label for="name" >Name</label>
+    <input type="text"  formControlName="name" class="form-control" id="name">
+  </div>
+
+  <div class="form-group">
+    <label for="area" >area</label>
+    <input type="text"  formControlName="area" class="form-control" id="area">
+  </div>
+
+  <div class="form-group">
+    <label for="cost" >cost</label>
+    <input type="text"  formControlName="cost" class="form-control" id="cost">
+  </div>
+
+  <div class="form-group">
+    <label for="maxPeople" >maxPeople</label>
+    <input type="text"  formControlName="maxPeople" class="form-control" id="maxPeople">
+  </div>
+
+  <div class="form-group">
+    <label for="rentType" >rentType</label>
+    <input type="text"  formControlName="rentType" class="form-control" id="rentType"  >
+  </div>
+
+  <div class="form-group">
+    <label for="romStandard" >Room Standard</label>
+    <input type="text"  formControlName="romStandard" class="form-control" id="romStandard"  >
+  </div>
+
+  <div class="form-group">
+    <label for="otherAamenities" >otherAamenities</label>
+    <input type="text"  formControlName="otherAamenities" class="form-control" id="otherAamenities"  >
+  </div>
+
+  <div class="form-group">
+    <label for="poolArea" >poolArea</label>
+    <input type="text"  formControlName="poolArea" class="form-control" id="poolArea"  >
+  </div>
+
+  <div class="form-group">
+    <label for="numberFloors" >numberFloors</label>
+    <input type="text"  formControlName="numberFloors" class="form-control" id="numberFloors"  >
+  </div>
+
+
+
+  <div class="form-group">
+    <label for="img" >img</label>
+    <input type="text"  formControlName="img" class="form-control" id="img"  >
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+</div>
