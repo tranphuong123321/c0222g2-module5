@@ -5,9 +5,9 @@
     Create Facility
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a  [routerLink]="['/facility/create/villa']" class="btn btn-secondary mr-2">Villa</a>
-    <a  [routerLink]="['/facility/create/house']" class="btn btn-secondary mr-2">House</a>
-    <a  [routerLink]="['/facility/create/room']" class="btn btn-secondary">Room</a>
+    <a  [routerLink]="['/facility/create-villa']" class="btn btn-secondary mr-2">Villa</a>
+    <a  [routerLink]="['/facility/create-house']" class="btn btn-secondary mr-2">House</a>
+    <a  [routerLink]="['/facility/create-room']" class="btn btn-secondary">Room</a>
   </div>
 </div>
 <br/>
@@ -16,8 +16,8 @@
 <div class="row">
   <div *ngFor="let facility of facilitys" class="col-4 mb-3">
     <div class="card" style="width: 22rem;">
-      <div class="badge badge-warning">${{facility.cost}}</div>
-      <img [src]=" facility.img" alt="Card image cap" class="card-img-top">
+      <div class="badge badge-warning">{{facility.cost}}</div>
+      <a [routerLink]="['/facility/detail',facility.id]" ><img [src]=" facility.img" alt="Card image cap" class="card-img-top"></a>
       <div class="card-body">
         <h5 class="card-title text-uppercase font-weight-bold">{{ facility.name }}</h5>
 
@@ -30,11 +30,12 @@
           <div class="dropout active">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <button class="btn btn-outline-info" data-target="#detailModal"
-                        data-toggle="modal" type="button"
-                >
-                  <i class='bx bx-search-alt bx-sx'></i>
-                </button>
+<!--                <button class="btn btn-outline-info" data-target="#detailModal"-->
+<!--                        data-toggle="modal" type="button"-->
+<!--                >-->
+<!--                  <i class='bx bx-search-alt bx-sx'>edit</i>-->
+<!--                </button>-->
+                <button type="button" class="btn btn-primary" [routerLink]="['/facility/edit',facility.id]">Edit</button>
               </li>
 <!--              <li class="nav-item">-->
 <!--                <a [routerLink]="['/facility/update',facility.facilityType.id, facility.id]"-->
@@ -43,9 +44,9 @@
 <!--                </a>-->
 <!--              </li>-->
               <li class="nav-item">
-                <button (click)="showMess(facility.name, facility.id)" class="btn btn-outline-danger"
-                        data-target="#deleteModal" data-toggle="modal">
-                  <i class='bx bx-trash bx-sx'></i>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="showMess(facility.id,facility.name)" >
+                  DELETE
                 </button>
               </li>
             </ul>
@@ -67,8 +68,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        DO YOU WANT TO DELETE {{nameToDelete}}?
+      <div class="modal-body" style="color: red" >
+        DO YOU WANT TO DELETE "{{nameToDelete}}?"
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -77,4 +78,3 @@
     </div>
   </div>
 </div>
-

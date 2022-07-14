@@ -1,1 +1,82 @@
-<p>facility-edit works!</p>
+<h1 style="text-align: center">Edit </h1>
+<div class="container">
+  <form  [formGroup]="editForm" (ngSubmit)="updateFacility(id)">
+
+
+    <div class="form-group">
+      <label for="name" >Name</label>
+      <input type="text"  formControlName="name" class="form-control" id="name">
+    </div>
+
+    <div class="form-group">
+      <label for="area" >Area</label>
+      <input type="text"  formControlName="area" class="form-control" id="area">
+    </div>
+
+    <div class="form-group">
+      <label for="cost" >Cost</label>
+      <input type="text"  formControlName="cost" class="form-control" id="cost">
+    </div>
+
+    <div class="form-group">
+      <label for="maxPeople" >Max People</label>
+      <input type="text"  formControlName="maxPeople" class="form-control" id="maxPeople">
+    </div>
+
+    <!--    <div class="form-group">-->
+    <!--      <label for="rentType" >Rent Type</label>-->
+    <!--      <input type="text"  formControlName="rentType" class="form-control" id="rentType"  >-->
+    <!--    </div>-->
+    <div class="form-group">
+      <label >Rent Type</label>
+      <select class="form-control" id="rentType" formControlName="rentType">
+        <option value="Year">Year</option>
+        <option value="Month">Month</option>
+        <option value="Day">Day</option>
+        <option value="Hour">Hour</option>
+      </select>
+    </div>
+
+
+    <!--    <div class="form-group">-->
+    <!--      <label for="romStandard" >Room Standard</label>-->
+    <!--      <input type="text"  formControlName="romStandard" class="form-control" id="romStandard"  >-->
+    <!--    </div>-->
+    <div class="form-group">
+      <label >Room Standard</label>
+      <select class="form-control" id="romStandard" formControlName="romStandard">
+        <option value="Vip">Vip</option>
+        <option value="Normal">Normal</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="otherAamenities" >Other Amenities</label>
+      <input type="text"  formControlName="otherAamenities" class="form-control" id="otherAamenities"  >
+    </div>
+
+    <div class="form-group">
+      <label for="poolArea" >Pool Area</label>
+      <input type="text"  formControlName="poolArea" class="form-control" id="poolArea"  >
+    </div>
+
+    <div class="form-group">
+      <label for="numberFloors" >NumberFloors</label>
+      <input type="text"  formControlName="numberFloors" class="form-control" id="numberFloors"  >
+    </div>
+
+    <div class="form-group">
+      <label for="numberFloors" >Free Service Included</label>
+      <input type="text"  formControlName="freeServiceIncluded" class="form-control" id="freeServiceIncluded"  >
+    </div>
+
+
+    <div class="form-group">
+      <label for="img" >img</label>
+      <input type="text"  formControlName="img" class="form-control" id="img" readonly >
+    </div>
+
+    <button type="submit" class="btn btn-primary">Edit</button>
+  </form>
+</div>
