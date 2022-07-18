@@ -47,6 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bai_tap/tinh-tong-fibo" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="D:\code gym\c0222g2-module5\bai_02\thuc_hanh\typescript-promise\node_modules\typescript\lib" />
   </component>
@@ -61,6 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657860348998</updated>
       <workItem from="1657860350358" duration="188000" />
+      <workItem from="1657866550626" duration="14000" />
     </task>
     <servers />
   </component>
@@ -77,5 +79,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1657866563007">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1657866563007" />
   </component>
 </project>

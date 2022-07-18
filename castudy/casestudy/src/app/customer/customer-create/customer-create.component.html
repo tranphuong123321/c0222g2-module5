@@ -3,14 +3,10 @@
 <form  [formGroup]="customerForm" (ngSubmit)="submit()">
 
   <div class="form-group">
-<!--    <div class="form-group">-->
-<!--      <label for="formGroupExampleInput">Example label</label>-->
-<!--      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">-->
-<!--    </div>-->
+
 
     <label for="code" >Code</label>
     <input type="text"  formControlName="code" class="form-control" id="code"  placeholder="Enter Code">
-<!--    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
     <small *ngIf="customerForm.controls.code.hasError('required') && customerForm.controls.code.touched" style="color: red">
       * Cannot be left blank
     </small>
@@ -29,7 +25,7 @@
 
   <div class="form-group">
     <label for="code">Birth Day</label>
-    <input type="text"  formControlName="birthDay" class="form-control" id="birthDay" aria-describedby="emailHelp" placeholder="Enter BirthDay">
+    <input type="date"  formControlName="birthDay" class="form-control" id="birthDay" aria-describedby="emailHelp" placeholder="Enter BirthDay">
     <small *ngIf="customerForm.controls.birthDay.hasError('required') && customerForm.controls.birthDay.touched" style="color: red">
       * Cannot be left blank
     </small>
