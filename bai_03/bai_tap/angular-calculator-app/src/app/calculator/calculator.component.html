@@ -1,0 +1,10 @@
+num1:
+<input [(ngModel)]="num1" >
+num2:
+<input [(ngModel)]="num2" > <br/><br/><br/>
+<button (click)="tinhToan($event.target.value)" value="+">+</button> &nbsp;
+<button (click)="tinhToan($event.target.value)" value="-">-</button> &nbsp;
+<button (click)="tinhToan($event.target.value)" value="*">*</button> &nbsp;
+<button (click)="tinhToan($event.target.value)" value="/">/</button>
+<br/><br/><br/>
+result: {{result}}
