@@ -6,23 +6,51 @@
     <div class="form-group">
       <label for="name" >Name</label>
       <input type="text"  formControlName="name" class="form-control" id="name">
+      <small *ngIf="houseForm.controls.name.hasError('required') && houseForm.controls.name.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="houseForm.controls.name.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="area" >Area</label>
       <input type="text"  formControlName="area" class="form-control" id="area">
+      <small *ngIf="houseForm.controls.area.hasError('required') && houseForm.controls.area.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="houseForm.controls.area.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="cost" >Cost</label>
       <input type="text"  formControlName="cost" class="form-control" id="cost">
+      <small *ngIf="houseForm.controls.cost.hasError('required') && houseForm.controls.cost.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="houseForm.controls.cost.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="maxPeople" >Max People</label>
       <input type="text"  formControlName="maxPeople" class="form-control" id="maxPeople">
+      <small *ngIf="houseForm.controls.maxPeople.hasError('required') && houseForm.controls.maxPeople.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="houseForm.controls.maxPeople.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
+    <!--    <div class="form-group">-->
+    <!--      <label for="rentType" >Rent Type</label>-->
+    <!--      <input type="text"  formControlName="rentType" class="form-control" id="rentType"  >-->
+    <!--    </div>-->
     <div class="form-group">
       <label >Rent Type</label>
       <select class="form-control" id="rentType" formControlName="rentType">
@@ -31,26 +59,55 @@
         <option value="Day">Day</option>
         <option value="Hour">Hour</option>
       </select>
+      <small *ngIf="houseForm.controls.rentType.hasError('required') && houseForm.controls.rentType.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="houseForm.controls.rentType.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
+
+    <!--    <div class="form-group">-->
+    <!--      <label for="romStandard" >Room Standard</label>-->
+    <!--      <input type="text"  formControlName="romStandard" class="form-control" id="romStandard"  >-->
+    <!--    </div>-->
     <div class="form-group">
       <label >Room Standard</label>
       <select class="form-control" id="romStandard" formControlName="romStandard">
         <option value="Vip">Vip</option>
         <option value="Normal">Normal</option>
       </select>
+      <small *ngIf="houseForm.controls.romStandard.hasError('required') && houseForm.controls.romStandard.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="houseForm.controls.romStandard.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
+
 
     <div class="form-group">
       <label for="otherAamenities" >Other Amenities</label>
       <input type="text"  formControlName="otherAamenities" class="form-control" id="otherAamenities"  >
+      <small *ngIf="houseForm.controls.otherAamenities.hasError('required') && houseForm.controls.otherAamenities.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="houseForm.controls.otherAamenities.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
 
-
     <div class="form-group">
-      <label for="numberFloors" >Number Floors</label>
+      <label for="numberFloors" >NumberFloors</label>
       <input type="text"  formControlName="numberFloors" class="form-control" id="numberFloors"  >
+      <small *ngIf="houseForm.controls.numberFloors.hasError('required') && houseForm.controls.numberFloors.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="houseForm.controls.numberFloors.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
 
@@ -58,6 +115,12 @@
     <div class="form-group">
       <label for="img" >img</label>
       <input type="text"  formControlName="img" class="form-control" id="img"  >
+      <small *ngIf="houseForm.controls.img.hasError('required') && houseForm.controls.img.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="houseForm.controls.img.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <button type="submit" class="btn btn-primary">Create</button>

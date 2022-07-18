@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerService} from "../../service/customer.service";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 
 @Component({
@@ -29,15 +29,15 @@ export class CustomerEditComponent implements OnInit {
   getCustomer(id: number) {
     return this.customerService.findById(id).subscribe(customer => {
       this.customerForm = new FormGroup({
-        code: new FormControl(customer.code),
-        name: new FormControl(customer.name),
-        birthDay: new FormControl(customer.birthDay),
-        gender: new FormControl(customer.gender),
-        idCard: new FormControl(customer.idCard),
-        numberPhone: new FormControl(customer.numberPhone),
-        email: new FormControl(customer.email),
-        address: new FormControl(customer.address),
-        customerType: new FormControl(customer.customerType),
+        code: new FormControl(customer.code,[Validators.required]),
+        name: new FormControl(customer.name,[Validators.required]),
+        birthDay: new FormControl(customer.birthDay,[Validators.required]),
+        gender: new FormControl(customer.gender,[Validators.required]),
+        idCard: new FormControl(customer.idCard,[Validators.required]),
+        numberPhone: new FormControl(customer.numberPhone,[Validators.required]),
+        email: new FormControl(customer.email,[Validators.required]),
+        address: new FormControl(customer.address,[Validators.required]),
+        customerType: new FormControl(customer.customerType,[Validators.required]),
       });
     });
   }

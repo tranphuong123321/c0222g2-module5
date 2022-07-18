@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {FacilityService} from "../../service/facility.service";
 import {Router} from "@angular/router";
 
@@ -13,18 +13,18 @@ export class FacilityCreateVillaComponent implements OnInit {
   villaForm: FormGroup = new FormGroup({
     // id: new FormControl(),
 
-    name: new FormControl(''),
-    area: new FormControl(''),
-    cost: new FormControl(''),
-    maxPeople: new FormControl(''),
-    rentType: new FormControl(''),
+    name: new FormControl('', [Validators.required]),
+    area: new FormControl('', [Validators.required]),
+    cost: new FormControl('', [Validators.required]),
+    maxPeople: new FormControl('', [Validators.required]),
+    rentType: new FormControl('', [Validators.required]),
 
-    romStandard: new FormControl(''),
-    otherAamenities: new FormControl(''),
-    poolArea: new FormControl(''),
-    numberFloors: new FormControl(''),
+    romStandard: new FormControl('', [Validators.required]),
+    otherAamenities: new FormControl('', [Validators.required]),
+    poolArea: new FormControl('', [Validators.required]),
+    numberFloors: new FormControl('', [Validators.required]),
 
-    img: new FormControl(''),
+    img: new FormControl('', [Validators.required]),
   });
 
   constructor(private facilityService: FacilityService,

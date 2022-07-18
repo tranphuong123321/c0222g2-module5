@@ -5,9 +5,9 @@
     Create Facility
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a  [routerLink]="['/facility/create-villa']" class="btn btn-secondary mr-2">Villa</a>
-    <a  [routerLink]="['/facility/create-house']" class="btn btn-secondary mr-2">House</a>
-    <a  [routerLink]="['/facility/create-room']" class="btn btn-secondary">Room</a>
+    <a  [routerLink]="['/facility/create-villa']" class="btn btn-secondary mr-2">Create Villa</a>
+    <a  [routerLink]="['/facility/create-house']" class="btn btn-secondary mr-2">Create House</a>
+    <a  [routerLink]="['/facility/create-room']" class="btn btn-secondary">Create Room</a>
   </div>
 </div>
 <br/>
@@ -15,7 +15,7 @@
 
 <div class="row">
   <div *ngFor="let facility of facilitys" class="col-4 mb-3">
-    <div class="card" style="width: 22rem;">
+    <div class="card" style="width: 30rem;">
       <div class="badge badge-warning">{{facility.cost}}</div>
       <a [routerLink]="['/facility/detail',facility.id]" ><img [src]=" facility.img" alt="Card image cap" class="card-img-top"></a>
       <div class="card-body">

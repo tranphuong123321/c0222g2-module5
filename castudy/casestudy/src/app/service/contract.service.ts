@@ -14,4 +14,7 @@ export class ContractService {
   saveContract(contract): Observable<Contract> {
     return this.http.post<Contract>(API_URL + '/contracts', contract);
   }
+  getContract(): Observable<Contract[]> {
+    return this.http.get<Contract[]>(API_URL + '/contracts');
+  }
 }

@@ -6,21 +6,45 @@
     <div class="form-group">
       <label for="name" >Name</label>
       <input type="text"  formControlName="name" class="form-control" id="name">
+      <small *ngIf="villaForm.controls.name.hasError('required') && villaForm.controls.name.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="villaForm.controls.name.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="area" >Area</label>
       <input type="text"  formControlName="area" class="form-control" id="area">
+      <small *ngIf="villaForm.controls.area.hasError('required') && villaForm.controls.area.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="villaForm.controls.area.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="cost" >Cost</label>
       <input type="text"  formControlName="cost" class="form-control" id="cost">
+      <small *ngIf="villaForm.controls.cost.hasError('required') && villaForm.controls.cost.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="villaForm.controls.cost.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="maxPeople" >Max People</label>
       <input type="text"  formControlName="maxPeople" class="form-control" id="maxPeople">
+      <small *ngIf="villaForm.controls.maxPeople.hasError('required') && villaForm.controls.maxPeople.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="villaForm.controls.maxPeople.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
 <!--    <div class="form-group">-->
@@ -35,6 +59,12 @@
         <option value="Day">Day</option>
         <option value="Hour">Hour</option>
       </select>
+      <small *ngIf="villaForm.controls.rentType.hasError('required') && villaForm.controls.rentType.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="villaForm.controls.rentType.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
 
@@ -48,22 +78,46 @@
         <option value="Vip">Vip</option>
         <option value="Normal">Normal</option>
       </select>
+      <small *ngIf="villaForm.controls.romStandard.hasError('required') && villaForm.controls.romStandard.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="villaForm.controls.romStandard.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
 
     <div class="form-group">
       <label for="otherAamenities" >Other Amenities</label>
       <input type="text"  formControlName="otherAamenities" class="form-control" id="otherAamenities"  >
+      <small *ngIf="villaForm.controls.otherAamenities.hasError('required') && villaForm.controls.otherAamenities.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="villaForm.controls.otherAamenities.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="poolArea" >Pool Area</label>
       <input type="text"  formControlName="poolArea" class="form-control" id="poolArea"  >
+      <small *ngIf="villaForm.controls.poolArea.hasError('required') && villaForm.controls.poolArea.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="villaForm.controls.poolArea.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="numberFloors" >NumberFloors</label>
       <input type="text"  formControlName="numberFloors" class="form-control" id="numberFloors"  >
+      <small *ngIf="villaForm.controls.numberFloors.hasError('required') && villaForm.controls.numberFloors.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="villaForm.controls.numberFloors.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
 
@@ -71,6 +125,12 @@
     <div class="form-group">
       <label for="img" >img</label>
       <input type="text"  formControlName="img" class="form-control" id="img"  >
+      <small *ngIf="villaForm.controls.img.hasError('required') && villaForm.controls.img.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="villaForm.controls.img.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <button type="submit" class="btn btn-primary">Create</button>

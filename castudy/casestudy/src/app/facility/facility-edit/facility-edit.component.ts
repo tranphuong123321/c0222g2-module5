@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {FacilityService} from "../../service/facility.service";
@@ -31,16 +31,16 @@ export class FacilityEditComponent implements OnInit {
   getFacility(id: number) {
     return this.facilityService.findById(id).subscribe(facility => {
       this.editForm = new FormGroup({
-        name: new FormControl(facility.name),
-        area: new FormControl(facility.area),
-        cost: new FormControl(facility.cost),
-        maxPeople: new FormControl(facility.maxPeople),
-        rentType: new FormControl(facility.rentType),
-        romStandard: new FormControl(facility.romStandard),
-        otherAamenities: new FormControl(facility.otherAamenities),
-        poolArea: new FormControl(facility.poolArea),
-        numberFloors: new FormControl(facility.numberFloors),
-        freeServiceIncluded: new FormControl(facility.freeServiceIncluded),
+        name: new FormControl(facility.name, [Validators.required]),
+        area: new FormControl(facility.area, [Validators.required]),
+        cost: new FormControl(facility.cost, [Validators.required]),
+        maxPeople: new FormControl(facility.maxPeople, [Validators.required]),
+        rentType: new FormControl(facility.rentType, [Validators.required]),
+        romStandard: new FormControl(facility.romStandard, [Validators.required]),
+        otherAamenities: new FormControl(facility.otherAamenities, [Validators.required]),
+        poolArea: new FormControl(facility.poolArea, [Validators.required]),
+        numberFloors: new FormControl(facility.numberFloors, [Validators.required]),
+        freeServiceIncluded: new FormControl(facility.freeServiceIncluded, [Validators.required]),
         img: new FormControl(facility.img),
       });
     });

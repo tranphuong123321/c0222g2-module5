@@ -6,21 +6,45 @@
     <div class="form-group">
       <label for="name" >Name</label>
       <input type="text"  formControlName="name" class="form-control" id="name">
+      <small *ngIf="roomForm.controls.name.hasError('required') && roomForm.controls.name.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="roomForm.controls.name.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="area" >Area</label>
       <input type="text"  formControlName="area" class="form-control" id="area">
+      <small *ngIf="roomForm.controls.area.hasError('required') && roomForm.controls.area.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="roomForm.controls.area.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="cost" >Cost</label>
       <input type="text"  formControlName="cost" class="form-control" id="cost">
+      <small *ngIf="roomForm.controls.cost.hasError('required') && roomForm.controls.cost.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="roomForm.controls.cost.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="maxPeople" >Max People</label>
       <input type="text"  formControlName="maxPeople" class="form-control" id="maxPeople">
+      <small *ngIf="roomForm.controls.maxPeople.hasError('required') && roomForm.controls.maxPeople.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="roomForm.controls.maxPeople.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
@@ -31,18 +55,36 @@
         <option value="Day">Day</option>
         <option value="Hour">Hour</option>
       </select>
+      <small *ngIf="roomForm.controls.rentType.hasError('required') && roomForm.controls.rentType.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="roomForm.controls.rentType.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
 
     <div class="form-group">
       <label for="rentType" >Free Service Included</label>
       <input type="text"  formControlName="freeServiceIncluded" class="form-control" id="freeServiceIncluded"  >
+      <small *ngIf="roomForm.controls.freeServiceIncluded.hasError('required') && roomForm.controls.freeServiceIncluded.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="roomForm.controls.freeServiceIncluded.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
 
     <div class="form-group">
       <label for="img" >img</label>
       <input type="text"  formControlName="img" class="form-control" id="img"  >
+      <small *ngIf="roomForm.controls.img.hasError('required') && roomForm.controls.img.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="roomForm.controls.img.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <button type="submit" class="btn btn-primary">Create</button>

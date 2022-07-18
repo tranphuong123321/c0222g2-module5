@@ -6,7 +6,7 @@
   </div>
   <br/>
   <table id="customers" style="border-collapse: collapse;">
-    <tr>
+    <tr >
       <th>Code</th>
       <th>Customer</th>
       <th>Facility</th>
@@ -14,7 +14,27 @@
       <th>EndDate</th>
       <th>Deposit</th>
       <th>Total</th>
+<!--      <th>Action</th>-->
+    </tr>
+    <tr *ngFor="let contract of contracts | paginate : { itemsPerPage: 2, currentPage: p }">
+      <td>{{contract.code}}</td>
+      <td>{{contract.customer.name}}</td>
+      <td>{{contract.facility.name}}</td>
+      <td>{{contract.startDate}}</td>
+      <td>{{contract.endDate}}</td>
+      <td>{{contract.deposit}}</td>
+      <td>{{contract.total}}</td>
+<!--      <td>-->
+<!--        <button type="button" class="btn btn-primary" [routerLink]="['/contract/edit',contract.id]">Edit</button>-->
+<!--        &nbsp;-->
+<!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="showMess(contract.id,contract.name)" >-->
+<!--          DELETE-->
+<!--        </button>-->
+<!--      </td>-->
     </tr>
 
   </table>
+</div>
+<div style="justify-content: space-around;display: flex;">
+  <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
 </div>
