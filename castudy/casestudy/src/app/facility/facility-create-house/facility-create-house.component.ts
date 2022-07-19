@@ -13,7 +13,7 @@ export class FacilityCreateHouseComponent implements OnInit {
   houseForm: FormGroup = new FormGroup({
     // id: new FormControl(),
 
-    name: new FormControl('', [Validators.required]),
+    name: new FormControl('', [Validators.required,Validators.pattern('^[a-zA-Z ]+$')]),
     area: new FormControl('', [Validators.required]),
     cost: new FormControl('', [Validators.required]),
     maxPeople: new FormControl('', [Validators.required]),
@@ -22,7 +22,7 @@ export class FacilityCreateHouseComponent implements OnInit {
     romStandard: new FormControl('', [Validators.required]),
     otherAamenities: new FormControl('', [Validators.required]),
 
-    numberFloors: new FormControl('', [Validators.required]),
+    numberFloors: new FormControl('', [Validators.required,Validators.pattern("[+]?\\d+")]),
 
     img: new FormControl('', [Validators.required]),
   });

@@ -13,7 +13,7 @@ export class FacilityCreateRoomComponent implements OnInit {
   roomForm: FormGroup = new FormGroup({
     // id: new FormControl(),
 
-    name: new FormControl('',[Validators.required]),
+    name: new FormControl('',[Validators.required,Validators.pattern('^[a-zA-Z ]+$')]),
     area: new FormControl('',[Validators.required]),
     cost: new FormControl('',[Validators.required]),
     maxPeople: new FormControl('',[Validators.required]),
