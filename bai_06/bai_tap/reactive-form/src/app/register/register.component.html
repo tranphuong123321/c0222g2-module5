@@ -1,0 +1,97 @@
+<div class="container">
+  <h1>Form Đăng Ký</h1>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<!--    email, password, confirmPassword, country, age, gender, phone-->
+    <label>
+      email:
+      <input type="text" formControlName="email" />
+    </label>
+    <span *ngIf="profileForm.controls.email.hasError('required')" class="errorMessage">
+      * Không được để trống
+    </span>
+    <span *ngIf="profileForm.controls.email.hasError('pattern')" class="errorMessage">
+      * Không đúng định dạng
+    </span>
+    <br />
+
+    <label>
+      password:
+      <input type="text" formControlName="password"  />
+    </label>
+    <span *ngIf="profileForm.controls.password.hasError('required')" class="errorMessage">
+      * Không được để trống
+    </span>
+    <span *ngIf="profileForm.controls.password.hasError('pattern')" class="errorMessage">
+      * Không đúng định dạng
+    </span>
+    <br />
+
+    <label>
+      confirmPassword:
+      <input type="text" formControlName="confirmPassword"  />
+    </label>
+    <span *ngIf="profileForm.controls.confirmPassword.hasError('required')" class="errorMessage">
+      * Không được để trống
+    </span>
+    <span *ngIf="profileForm.hasError('passValid')" class="errorMessage">
+      * Phải giống password
+    </span>
+    <br />
+
+    <label>
+      country:
+      <input type="text" formControlName="country"  />
+    </label>
+    <span *ngIf="profileForm.controls.country.hasError('required')" class="errorMessage">
+      * Không được để trống
+    </span>
+    <br />
+
+    <label>
+      age:
+      <input type="text" formControlName="age"  />
+    </label>
+    <span *ngIf="profileForm.controls.age.hasError('required')" class="errorMessage">
+      * Không được để trống
+    </span>
+    <span *ngIf="profileForm.controls.age.hasError('pattern')" class="errorMessage">
+      * Không đúng định dạng
+    </span>
+
+    <br />
+
+    <label>
+      gender:
+<!--      <input type="text" formControlName="gender"  />-->
+      <select  ng-model="gender" ng-options="item for item in items" formControlName="gender" required>
+        <option value="Nam" selected="gender">Nam</option>
+        <option value="Nu" selected="gender">Nữ</option>
+        <option value="LGBT" selected="gender">Khác</option>
+
+      </select>
+    </label>
+    <span *ngIf="profileForm.controls.gender.hasError('required')" class="errorMessage">
+      * Không được để trống
+    </span>
+    <br />
+
+    <label>
+      phone:
+      <input type="text" formControlName="phone"  />
+    </label>
+    <span *ngIf="profileForm.controls.phone.hasError('required')" class="errorMessage">
+      * Không được để trống
+    </span>
+    <br />
+
+
+    <button
+      type="submit"
+      class="btn btn-success"
+      [disabled]="!profileForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+

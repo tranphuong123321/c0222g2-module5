@@ -1,0 +1,40 @@
+<h1 >Login</h1>
+<div class="container">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <label>
+      email:
+      <input type="text" formControlName="email" />
+    </label>
+    <small *ngIf="profileForm.controls.email.hasError('required')&& profileForm.controls.email.touched" class="errorMessage">
+      * Không được để trống
+    </small>
+    <small *ngIf="profileForm.controls.email.hasError('pattern')" class="errorMessage">
+      * Không đúng định dạng
+    </small>
+    <br />
+
+    <label>
+      password:
+      <input type="text" formControlName="password"  />
+    </label>
+    <small *ngIf="profileForm.controls.password.hasError('required')&& profileForm.controls.password.touched" class="errorMessage">
+      * Không được để trống
+    </small>
+        <small *ngIf="profileForm.controls.password.hasError('pattern')" class="errorMessage">
+          * Không đúng định dạng
+        </small>
+    <br />
+
+
+
+    <button
+      type="submit"
+      class="btn btn-success"
+      [disabled]="!profileForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+
