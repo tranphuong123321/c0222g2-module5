@@ -15,6 +15,7 @@ export class FacilityEditComponent implements OnInit {
   id: number;
 
 
+
   constructor(private facilityService: FacilityService,
               private activatedRoute: ActivatedRoute,
               private router: Router) {

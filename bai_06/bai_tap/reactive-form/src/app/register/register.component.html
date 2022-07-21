@@ -6,7 +6,7 @@
       email:
       <input type="text" formControlName="email" />
     </label>
-    <span *ngIf="profileForm.controls.email.hasError('required')" class="errorMessage">
+    <span *ngIf="profileForm.controls.email.hasError('required')&&profileForm.controls.email.touched" class="errorMessage">
       * Không được để trống
     </span>
     <span *ngIf="profileForm.controls.email.hasError('pattern')" class="errorMessage">
@@ -18,7 +18,7 @@
       password:
       <input type="text" formControlName="password"  />
     </label>
-    <span *ngIf="profileForm.controls.password.hasError('required')" class="errorMessage">
+    <span *ngIf="profileForm.controls.password.hasError('required')&&profileForm.controls.password.touched" class="errorMessage">
       * Không được để trống
     </span>
     <span *ngIf="profileForm.controls.password.hasError('pattern')" class="errorMessage">
@@ -30,7 +30,7 @@
       confirmPassword:
       <input type="text" formControlName="confirmPassword"  />
     </label>
-    <span *ngIf="profileForm.controls.confirmPassword.hasError('required')" class="errorMessage">
+    <span *ngIf="profileForm.controls.confirmPassword.hasError('required')&&profileForm.controls.confirmPassword.touched" class="errorMessage">
       * Không được để trống
     </span>
     <span *ngIf="profileForm.hasError('passValid')" class="errorMessage">
@@ -42,7 +42,7 @@
       country:
       <input type="text" formControlName="country"  />
     </label>
-    <span *ngIf="profileForm.controls.country.hasError('required')" class="errorMessage">
+    <span *ngIf="profileForm.controls.country.hasError('required')&&profileForm.controls.country.touched" class="errorMessage">
       * Không được để trống
     </span>
     <br />
@@ -51,7 +51,7 @@
       age:
       <input type="text" formControlName="age"  />
     </label>
-    <span *ngIf="profileForm.controls.age.hasError('required')" class="errorMessage">
+    <span *ngIf="profileForm.controls.age.hasError('required')&&profileForm.controls.age.touched" class="errorMessage">
       * Không được để trống
     </span>
     <span *ngIf="profileForm.controls.age.hasError('pattern')" class="errorMessage">
@@ -70,7 +70,7 @@
 
       </select>
     </label>
-    <span *ngIf="profileForm.controls.gender.hasError('required')" class="errorMessage">
+    <span *ngIf="profileForm.controls.gender.hasError('required')&&profileForm.controls.gender.touched" class="errorMessage">
       * Không được để trống
     </span>
     <br />
@@ -79,7 +79,7 @@
       phone:
       <input type="text" formControlName="phone"  />
     </label>
-    <span *ngIf="profileForm.controls.phone.hasError('required')" class="errorMessage">
+    <span *ngIf="profileForm.controls.phone.hasError('required')&&profileForm.controls.phone.touched" class="errorMessage">
       * Không được để trống
     </span>
     <br />

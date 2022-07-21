@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 import {CustomerService} from "../../service/customer.service";
 import {Router} from "@angular/router";
 import {Customer} from "../../model/customer";
@@ -24,7 +24,7 @@ export class ContractCreateComponent implements OnInit {
     endDate: new FormControl('', [Validators.required, Validators.pattern('^\\d{4}\\-\\d{2}\\-\\d{2}$')]),
     deposit: new FormControl('', [Validators.required, Validators.pattern('[+]?\\d+')]),
     total: new FormControl('', [Validators.required]),
-  });
+  },[this.checkDate]);
 
 
   constructor(private contractService: ContractService,
@@ -57,4 +57,14 @@ export class ContractCreateComponent implements OnInit {
       this.facilitys = facilitys;
     });
   }
+  public checkDate(abstractControl: AbstractControl): any{
+    const startDay = abstractControl.get('startDate').value
+    const endDate = abstractControl.get('endDate').value
+    if(endDate-startDay>=0){
+      return null;
+    }else {
+      return {passValid: true}
+    }
+  }
+
 }

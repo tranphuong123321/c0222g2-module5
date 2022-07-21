@@ -17,22 +17,37 @@
     <div class="form-group">
       <label for="area" >Area</label>
       <input type="text"  formControlName="area" class="form-control" id="area">
+      <small *ngIf="editForm.controls.area.hasError('required') && editForm.controls.area.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="editForm.controls.area.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="cost" >Cost</label>
       <input type="text"  formControlName="cost" class="form-control" id="cost">
+      <small *ngIf="editForm.controls.cost.hasError('required') && editForm.controls.cost.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="editForm.controls.cost.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="maxPeople" >Max People</label>
       <input type="text"  formControlName="maxPeople" class="form-control" id="maxPeople">
+      <small *ngIf="editForm.controls.maxPeople.hasError('required') && editForm.controls.maxPeople.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="editForm.controls.maxPeople.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
-    <!--    <div class="form-group">-->
-    <!--      <label for="rentType" >Rent Type</label>-->
-    <!--      <input type="text"  formControlName="rentType" class="form-control" id="rentType"  >-->
-    <!--    </div>-->
+
     <div class="form-group">
       <label >Rent Type</label>
       <select class="form-control" id="rentType" formControlName="rentType">
@@ -41,40 +56,73 @@
         <option value="Day">Day</option>
         <option value="Hour">Hour</option>
       </select>
+      <small *ngIf="editForm.controls.rentType.hasError('required') && editForm.controls.rentType.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="editForm.controls.rentType.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
 
-    <!--    <div class="form-group">-->
-    <!--      <label for="romStandard" >Room Standard</label>-->
-    <!--      <input type="text"  formControlName="romStandard" class="form-control" id="romStandard"  >-->
-    <!--    </div>-->
-    <div class="form-group">
+
+    <div class="form-group" >
       <label >Room Standard</label>
       <select class="form-control" id="romStandard" formControlName="romStandard">
         <option value="Vip">Vip</option>
         <option value="Normal">Normal</option>
       </select>
+      <small *ngIf="editForm.controls.romStandard.hasError('required') && editForm.controls.romStandard.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="editForm.controls.romStandard.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
 
     <div class="form-group">
       <label for="otherAamenities" >Other Amenities</label>
       <input type="text"  formControlName="otherAamenities" class="form-control" id="otherAamenities"  >
+      <small *ngIf="editForm.controls.otherAamenities.hasError('required') && editForm.controls.otherAamenities.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="editForm.controls.otherAamenities.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="poolArea" >Pool Area</label>
       <input type="text"  formControlName="poolArea" class="form-control" id="poolArea"  >
+      <small *ngIf="editForm.controls.poolArea.hasError('required') && editForm.controls.poolArea.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="editForm.controls.poolArea.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="numberFloors" >NumberFloors</label>
       <input type="text"  formControlName="numberFloors" class="form-control" id="numberFloors"  >
+      <small *ngIf="editForm.controls.numberFloors.hasError('required') && editForm.controls.numberFloors.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="editForm.controls.numberFloors.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
     <div class="form-group">
       <label for="numberFloors" >Free Service Included</label>
       <input type="text"  formControlName="freeServiceIncluded" class="form-control" id="freeServiceIncluded"  >
+      <small *ngIf="editForm.controls.freeServiceIncluded.hasError('required') && editForm.controls.freeServiceIncluded.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="editForm.controls.freeServiceIncluded.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
     </div>
 
 

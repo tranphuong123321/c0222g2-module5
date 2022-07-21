@@ -63,6 +63,9 @@
       <small *ngIf="contractForm.controls.endDate.hasError('pattern')" style="color: red">
         * Malformed
       </small>
+      <small *ngIf="contractForm.controls.endDate.hasError('passValid')" style="color: red">
+        * Enddate > Startdate
+      </small>
     </div>
 
     <div class="form-group">

@@ -28,9 +28,9 @@ export class RegisterComponent implements OnInit {
 
   }
 
-  public checkConfirmPassword(obj: AbstractControl) {
-    const password = obj.get('password').value;
-    const confirmPassword = obj.get('confirmPassword').value;
+  public checkConfirmPassword(abstractControl: AbstractControl) {
+    const password = abstractControl.get('password').value;
+    const confirmPassword = abstractControl.get('confirmPassword').value;
     if (password !== confirmPassword) {
       return {passValid: true};
     } else {
