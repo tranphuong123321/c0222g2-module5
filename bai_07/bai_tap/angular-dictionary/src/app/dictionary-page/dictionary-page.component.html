@@ -1,0 +1,13 @@
+<h1 STYLE="text-align: center">DICTIONARY</h1>
+<table id="customers" style="border-collapse: collapse;">
+  <tr>
+    <th>ID</th>
+    <th>WORD</th>
+    <th>DETAIL</th>
+  </tr>
+  <tr *ngFor="let dictionary of this.dictionarys">
+    <td>{{dictionary.id}}</td>
+    <td>{{dictionary.word}}</td>
+    <td><a [routerLink]="['/detail',dictionary.id]">detail</a></td>
+  </tr>
+</table>
