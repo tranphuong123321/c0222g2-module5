@@ -9,22 +9,30 @@
     <th>Danh mục</th>
     <th colspan="2">Chức năng</th>
   </tr>
-  <tr *ngFor="let product of products; index as i">
+  <tr *ngFor="let product of products | paginate : { itemsPerPage: 2, currentPage: p } ; index as i">
     <td>{{i + 1}}</td>
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
     <td>{{product.category.name}}</td>
     <td><a [routerLink]="['/product/edit',product.id]">Edit</a></td>
-    <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="showMess(product.id,product.name)" >
-      DELETE
-    </button></td>
+    <td>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+              (click)="showMess(product.id,product.name)">
+        DELETE
+      </button>
+    </td>
   </tr>
 </table>
 
 
+<div style="justify-content: space-around;display: flex;">
+  <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
+</div>
+
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
