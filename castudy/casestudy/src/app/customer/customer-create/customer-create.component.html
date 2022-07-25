@@ -3,8 +3,6 @@
 <form  [formGroup]="customerForm" (ngSubmit)="submit()">
 
   <div class="form-group">
-
-
     <label for="code" >Code</label>
     <input type="text"  formControlName="code" class="form-control" id="code"  placeholder="Enter Code">
     <small *ngIf="customerForm.controls.code.hasError('required') && customerForm.controls.code.touched" style="color: red">

@@ -111,20 +111,6 @@
       "freeServiceIncluded": "Have breakfast",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-_Exterior-1-F.jpg",
       "id": 8
-    },
-    {
-      "name": "POOL VILLAS",
-      "area": "320 ",
-      "cost": "300$",
-      "maxPeople": "3",
-      "rentType": "Month",
-      "romStandard": null,
-      "otherAamenities": null,
-      "poolArea": null,
-      "numberFloors": null,
-      "freeServiceIncluded": "Have breakfast",
-      "img": "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Pool_Villas.jpg",
-      "id": 9
     }
   ],
   "customers": [
@@ -133,7 +119,7 @@
       "name": "Nguyễn Văn A",
       "birthDay": "1990-01-01",
       "gender": "Male",
-      "idCard": "123654789",
+      "idCard": "123654786",
       "numberPhone": "0901234567",
       "email": "a2@gmail.com",
       "address": "Đà Nẵng",
