@@ -16,7 +16,7 @@
   "products": [
     {
       "name": "iphone",
-      "price": 1212124,
+      "price": "2626262",
       "description": "con hang",
       "category": {
         "name": "dien thoai",
@@ -43,6 +43,16 @@
         "id": 2
       },
       "id": 3
+    },
+    {
+      "name": "gfgfg",
+      "price": "54545",
+      "description": "gfgfg",
+      "category": {
+        "name": "laptop",
+        "id": 1
+      },
+      "id": 4
     }
   ]
 }

@@ -37,6 +37,7 @@ export class CategoryEditComponent implements OnInit {
     const category = this.categoryForm.value;
     this.categoryService.updateCategory(id, category).subscribe(() => {
       this.router.navigate(['/category/list']);
+      alert('Cập nhật thành công');
     });
   }
 }

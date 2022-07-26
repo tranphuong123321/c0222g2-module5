@@ -1,0 +1,49 @@
+{
+  "categories": [
+    {
+      "name": "lap top ",
+      "id": 1
+    },
+    {
+      "name": "dien thoai",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "name": "ggg",
+      "price": 454545,
+      "description": "ggggg",
+      "category": {
+        "id": null
+      },
+      "id": 1
+    },
+    {
+      "name": "gfgfg",
+      "price": 1212,
+      "description": "fdfdf",
+      "category": {
+        "id": "1"
+      },
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

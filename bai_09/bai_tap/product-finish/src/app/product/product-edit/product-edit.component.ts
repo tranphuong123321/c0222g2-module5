@@ -48,6 +48,7 @@ export class ProductEditComponent implements OnInit {
     const product = this.productForm.value;
     this.productService.updateProduct(id, product).subscribe(() => {
       this.router.navigate(['/product/list']);
+      alert('Cập nhật thành công');
     });
   }
   getCategory() {
@@ -55,5 +56,4 @@ export class ProductEditComponent implements OnInit {
       this.categories = categories;
     });
   }
-
 }

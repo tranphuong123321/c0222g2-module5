@@ -34,6 +34,7 @@ export class ProductCreateComponent implements OnInit {
     this.productService.saveProduct(product).subscribe(() => {
       this.productForm.reset();
       this.router.navigateByUrl('/product/list');
+      alert('Tạo mới thành công');
     }, e => console.log(e));
   }
 
