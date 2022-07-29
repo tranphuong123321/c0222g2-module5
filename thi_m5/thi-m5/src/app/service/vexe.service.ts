@@ -22,12 +22,9 @@ export class VexeService {
     return this.http.post<Vexe>(API_URL + '/vexe/create', vexe);
   }
   public findById(id: number): Observable<Vexe> {
-    return this.http.get<Vexe>(`${API_URL}/vexes/${id}`);
-  }
-  public updateVexe(id: number, vexe: Vexe): Observable<Vexe> {
-    return this.http.put<Vexe>(`${API_URL}/vexe/update${id}`, vexe);
+    return this.http.get<Vexe>(`${API_URL}/vexe/${id}`);
   }
   public deleteVexe(id: number): Observable<Vexe> {
-    return this.http.delete<Vexe>(`${API_URL}/vexes/${id}`);
+    return this.http.delete<Vexe>(`${API_URL}/vexe/delete/${id}`);
   }
 }

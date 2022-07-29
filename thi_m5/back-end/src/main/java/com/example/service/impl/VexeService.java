@@ -32,6 +32,11 @@ public class VexeService implements IVexeService {
     }
 
     @Override
+    public void save(VeXe veXe) {
+        iVexeRepository.save(veXe);
+    }
+
+    @Override
     public VeXe findVexeById(Integer id) {
         return iVexeRepository.findById(id).get();
     }
@@ -39,5 +44,10 @@ public class VexeService implements IVexeService {
     @Override
     public void update(VeXe veXe) {
         iVexeRepository.save(veXe);
+    }
+
+    @Override
+    public void delete(VeXe veXe) {
+        iVexeRepository.delete(veXe);
     }
 }

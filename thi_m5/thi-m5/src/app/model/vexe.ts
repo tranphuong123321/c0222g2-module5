@@ -8,5 +8,5 @@ export interface Vexe {
   ngayDi: string;
   gioDi: string;
   nhaXe: Nhaxe;
-  soLuong: string;
+  soLuong: number;
 }

@@ -29,11 +29,25 @@ public class VexeController {
     @PostMapping("/create")
     public ResponseEntity<VeXe> saveVexe(@RequestBody VeXe veXe) {
         iVexeService.Create(veXe);
-        return new ResponseEntity<>( HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
-    @PatchMapping("/update")
-    public ResponseEntity<VeXe> update (@RequestBody VeXe veXe) {
-        iVexeService.update(veXe);
-        return new ResponseEntity<>(veXe, HttpStatus.OK);
+
+    @GetMapping("/{id}")
+    private ResponseEntity<VeXe> findById(@PathVariable int id) {
+        return new ResponseEntity<>(iVexeService.findVexeById(id), HttpStatus.OK);
+    }
+
+    @PatchMapping("/update/{id}")
+    private ResponseEntity<?> update(@PathVariable int id) {
+//        VeXe veXe = iVexeService.findVexeById(id);
+//        veXe.setSoLuong(veXe.getSoLuong() - 1);
+//        iVexeService.save(veXe);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @DeleteMapping("/delete/{id}")
+    private ResponseEntity<?> delete(@PathVariable Integer id) {
+        System.out.println(id);
+        iVexeService.delete(iVexeService.findVexeById(id));
+        return new ResponseEntity<>( HttpStatus.OK);
     }
 }

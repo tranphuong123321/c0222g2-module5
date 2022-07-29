@@ -57,13 +57,14 @@
       </small>
     </div>
 
-    <div class="form-group">
-      <label >Danh mục sản phẩm</label>
-      <select class="form-control" formControlName="nhaxe" [compareWith]="equals">
-        <option selected [value]="null" disabled>Chọn danh mục sản phẩm</option>
-        <option [ngValue]="nhaxe" *ngFor="let nhaxe of nhaxes">{{nhaxe.tenNhaXe}}</option>
+    <div class="form-group" formGroupName="nhaXe">
+      <label >Danh sách nhà xe</label>
+      <select class="form-control" formControlName="id">
+        <option selected value="" disabled>Chọn nhà xe</option>
+        <option  *ngFor="let nhaxe of nhaxes" value="{{nhaxe.id}}">{{nhaxe.tenNhaXe}}</option>
+        <!--        <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>-->
       </select>
-      <small *ngIf="vexeForm.controls.nhaxe.hasError('required') && vexeForm.controls.nhaxe.touched" style="color: red">
+      <small *ngIf="vexeForm.controls.nhaXe.hasError('required') && vexeForm.controls.nhaXe.touched" style="color: red">
         * Cannot be left blank
       </small>
     </div>
@@ -78,10 +79,6 @@
         * Malformed
       </small>
     </div>
-
-
-
-
 
 
     <button [disabled]="!vexeForm.valid" type="submit" class="btn btn-primary">Edit</button>

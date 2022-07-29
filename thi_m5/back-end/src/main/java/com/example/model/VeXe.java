@@ -22,7 +22,7 @@ public class VeXe {
     public VeXe() {
     }
 
-    public VeXe(int id, String giaVe, String diemDi, String diemDen, String ngayDi, String gioDi, String soLuong, NhaXe nhaXe) {
+    public VeXe(Integer id, String giaVe, String diemDi, String diemDen, String ngayDi, String gioDi, String soLuong, NhaXe nhaXe) {
         this.id = id;
         this.giaVe = giaVe;
         this.diemDi = diemDi;
@@ -80,7 +80,6 @@ public class VeXe {
     public void setGioDi(String gioDi) {
         this.gioDi = gioDi;
     }
-
 
     public String getSoLuong() {
         return soLuong;

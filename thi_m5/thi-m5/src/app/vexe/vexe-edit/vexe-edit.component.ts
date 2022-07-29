@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Nhaxe} from '../../model/nhaxe';
 import {VexeService} from '../../service/vexe.service';
@@ -13,7 +13,18 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class VexeEditComponent implements OnInit {
 
-  vexeForm: FormGroup;
+  vexeForm = new FormGroup({
+    id: new FormControl(0),
+    giaVe: new FormControl(''),
+    diemDi: new FormControl(''),
+    diemDen: new FormControl(''),
+    ngayDi: new FormControl(''),
+    gioDi: new FormControl(''),
+    nhaXe: new FormGroup({
+      id: new FormControl('')
+    }),
+    soLuong: new FormControl(''),
+  });
   id: number;
   nhaxes: Nhaxe[] = [];
 
@@ -28,6 +39,7 @@ export class VexeEditComponent implements OnInit {
               private toast: ToastrService) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
+      console.log(this.id);
       this.getVexe(this.id);
     });
   }
@@ -37,27 +49,22 @@ export class VexeEditComponent implements OnInit {
   }
 
   getVexe(id: number) {
-    return this.vexeService.findById(id).subscribe(vexe => {
-      this.vexeForm = new FormGroup({
-        giaVe: new FormControl(vexe.giaVe),
-        diemDi: new FormControl(vexe.diemDi),
-        diemDen: new FormControl(vexe.diemDen),
-        ngayDi: new FormControl(vexe.ngayDi),
-        gioDi: new FormControl(vexe.gioDi),
-        nhaxe: new FormControl(vexe.nhaXe),
-        soLuong: new FormControl(vexe.soLuong),
-
-      });
+    this.vexeService.findById(id).subscribe(vexe => {
+      console.log(vexe);
+      this.vexeForm.patchValue(vexe);
     });
   }
 
   updateVexe(id: number) {
     const vexe = this.vexeForm.value;
-    this.vexeService.updateVexe(id, vexe).subscribe(() => {
-      this.router.navigate(['/vexe/list']);
-      this.toast.success('Cập nhật thành công');
-    });
+    console.log(vexe);
+    this.vexeService.saveVexe(vexe).subscribe(data => {
+        alert('cap nhat thanh cong');
+        this.router.navigate(['/vexe/list']);
+      }
+    );
   }
+
   getNhaxe() {
     this.nhaxeService.getNhaxe().subscribe(nhaxes => {
       this.nhaxes = nhaxes;

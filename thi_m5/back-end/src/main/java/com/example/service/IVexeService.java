@@ -14,6 +14,8 @@ public interface IVexeService {
     VeXe findVexeById(Integer id);
 
     void Create(VeXe veXe);
+    void save(VeXe veXe);
 
     void update( VeXe veXe);
+    void delete(VeXe veXe);
 }
