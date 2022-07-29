@@ -12,13 +12,14 @@ import {Router} from '@angular/router';
 })
 export class VexeCreateComponent implements OnInit {
   vexeForm: FormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required]),
     giaVe: new FormControl('', [Validators.required, Validators.pattern('[+]?\\d+')]),
     diemDi: new FormControl('', [Validators.required]),
     diemDen: new FormControl('', [Validators.required]),
     ngayDi: new FormControl('', [Validators.required]),
     gioDi: new FormControl('', [Validators.required]),
-    nhaxe: new FormControl('', [Validators.required]),
+    nhaXe: new FormGroup({
+      id: new FormControl('')
+    }),
     soLuong: new FormControl('', [Validators.required, Validators.pattern('[+]?\\d+')]),
   });
   nhaxes: Nhaxe[] = [];
@@ -35,11 +36,13 @@ export class VexeCreateComponent implements OnInit {
   getNhaxe() {
     this.nhaxeService.getNhaxe().subscribe(nhaxes => {
       this.nhaxes = nhaxes;
+      console.log(this.nhaxes);
     });
   }
 
   submit() {
     const vexe = this.vexeForm.value;
+    console.log(vexe);
     this.vexeService.saveVexe(vexe).subscribe(() => {
       this.vexeForm.reset();
       this.router.navigateByUrl('/vexe/list');

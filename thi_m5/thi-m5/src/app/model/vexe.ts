@@ -7,6 +7,6 @@ export interface Vexe {
   diemDen: string;
   ngayDi: string;
   gioDi: string;
-  nhaxe: Nhaxe;
+  nhaXe: Nhaxe;
   soLuong: string;
 }

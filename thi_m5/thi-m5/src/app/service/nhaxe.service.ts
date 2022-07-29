@@ -12,7 +12,7 @@ export class NhaxeService {
 
   constructor(private http: HttpClient) { }
   public getNhaxe(): Observable<Nhaxe[]> {
-    return this.http.get<Nhaxe[]>(API_URL + '/nhaxes');
+    return this.http.get<Nhaxe[]>(API_URL + '/nhaxe/list');
   }
   public deleteNhaxe(id: number): Observable<Nhaxe> {
     return this.http.delete<Nhaxe>(`${API_URL}/nhaxes/${id}`);

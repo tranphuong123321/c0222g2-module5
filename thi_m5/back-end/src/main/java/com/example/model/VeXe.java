@@ -7,13 +7,12 @@ import javax.persistence.*;
 public class VeXe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String giaVe;
     private String diemDi;
     private String diemDen;
     private String ngayDi;
     private String gioDi;
-    private String nhaxe;
     private String soLuong;
 
     @ManyToOne
@@ -23,23 +22,22 @@ public class VeXe {
     public VeXe() {
     }
 
-    public VeXe(int id, String giaVe, String diemDi, String diemDen, String ngayDi, String gioDi, String nhaxe, String soLuong, NhaXe nhaXe) {
+    public VeXe(int id, String giaVe, String diemDi, String diemDen, String ngayDi, String gioDi, String soLuong, NhaXe nhaXe) {
         this.id = id;
         this.giaVe = giaVe;
         this.diemDi = diemDi;
         this.diemDen = diemDen;
         this.ngayDi = ngayDi;
         this.gioDi = gioDi;
-        this.nhaxe = nhaxe;
         this.soLuong = soLuong;
         this.nhaXe = nhaXe;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -83,13 +81,6 @@ public class VeXe {
         this.gioDi = gioDi;
     }
 
-    public String getNhaxe() {
-        return nhaxe;
-    }
-
-    public void setNhaxe(String nhaxe) {
-        this.nhaxe = nhaxe;
-    }
 
     public String getSoLuong() {
         return soLuong;

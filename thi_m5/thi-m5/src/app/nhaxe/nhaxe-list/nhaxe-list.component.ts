@@ -22,6 +22,7 @@ export class NhaxeListComponent implements OnInit {
   getNhaxe() {
     this.nhaxeService.getNhaxe().subscribe(nhaxes => {
       this.nhaxes = nhaxes;
+      console.log(nhaxes);
     });
   }
   deleteNhaxe() {

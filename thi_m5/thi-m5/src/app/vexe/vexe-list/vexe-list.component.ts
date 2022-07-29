@@ -28,6 +28,7 @@ export class VexeListComponent implements OnInit {
   getDiemDen(value: string) {
     this.vexeService.getVexe().subscribe(data => {
       this.vexes = data;
+      console.log(data);
       this.diemDen = value.toLocaleLowerCase();
       const arr: Vexe[] = [];
       this.vexes.forEach(temp => {
@@ -56,6 +57,7 @@ export class VexeListComponent implements OnInit {
   getVexe() {
     this.vexeService.getVexe().subscribe(vexes => {
       this.vexes = vexes;
+      console.log(vexes);
     });
   }
 

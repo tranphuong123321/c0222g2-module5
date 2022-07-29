@@ -15,17 +15,17 @@ export class VexeService {
   }
 
   public getVexe(): Observable<Vexe[]> {
-    return this.http.get<Vexe[]>(API_URL + '/vexes');
+    return this.http.get<Vexe[]>(API_URL + '/vexe/list');
   }
 
   public saveVexe(vexe): Observable<Vexe> {
-    return this.http.post<Vexe>(API_URL + '/vexes', vexe);
+    return this.http.post<Vexe>(API_URL + '/vexe/create', vexe);
   }
   public findById(id: number): Observable<Vexe> {
     return this.http.get<Vexe>(`${API_URL}/vexes/${id}`);
   }
-  public updateVexe(id: number, product: Vexe): Observable<Vexe> {
-    return this.http.put<Vexe>(`${API_URL}/vexes/${id}`, product);
+  public updateVexe(id: number, vexe: Vexe): Observable<Vexe> {
+    return this.http.put<Vexe>(`${API_URL}/vexe/update${id}`, vexe);
   }
   public deleteVexe(id: number): Observable<Vexe> {
     return this.http.delete<Vexe>(`${API_URL}/vexes/${id}`);

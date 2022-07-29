@@ -44,7 +44,7 @@ export class VexeEditComponent implements OnInit {
         diemDen: new FormControl(vexe.diemDen),
         ngayDi: new FormControl(vexe.ngayDi),
         gioDi: new FormControl(vexe.gioDi),
-        nhaxe: new FormControl(vexe.nhaxe),
+        nhaxe: new FormControl(vexe.nhaXe),
         soLuong: new FormControl(vexe.soLuong),
 
       });
