@@ -1,0 +1,20 @@
+
+<div class="container">
+  <h1>them moi nha xe</h1>
+  <form [formGroup]="nhaxeForm" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <label  >Tên :</label>
+      <input type="text"  formControlName="tenNhaXe" class="form-control"   >
+      <small *ngIf="nhaxeForm.controls.tenNhaXe.hasError('required') && nhaxeForm.controls.tenNhaXe.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="nhaxeForm.controls.tenNhaXe.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
+    </div>
+
+
+    <button [disabled]="!nhaxeForm.valid" type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>

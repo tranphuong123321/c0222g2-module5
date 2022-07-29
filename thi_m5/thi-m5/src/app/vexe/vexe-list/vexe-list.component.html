@@ -1,0 +1,71 @@
+<h1 style="text-align: center">Danh sách Vé Xe</h1>
+<div>
+  <button type="button" class="btn btn-primary" routerLink="/vexe/create">Thêm vé</button> &nbsp;
+  <label >From:</label>
+  <input type="text" (keydown.enter)="getDiemDi($event.target.value)">
+  <label >To:</label>
+  <input type="text" (keydown.enter)="getDiemDen($event.target.value)">
+</div>
+
+<table id="customers" style="border-collapse: collapse;">
+  <tr>
+    <th>Điểm đi</th>
+    <th>Điểm đến</th>
+    <th>Giá vé</th>
+    <th>Ngày khởi hành</th>
+    <th>Giờ khởi hành</th>
+    <th>Nhà xe</th>
+    <th>Số lượng</th>
+    <th >Chức năng</th>
+  </tr>
+  <tr *ngFor="let vexe of vexes |paginate : { itemsPerPage: 2, currentPage: p }">
+
+    <td>{{vexe.diemDi}}</td>
+    <td>{{vexe.diemDen}}</td>
+    <td>{{vexe.giaVe}}</td>
+    <td>{{vexe.ngayDi}}</td>
+    <td>{{vexe.gioDi}}</td>
+    <td>{{vexe.nhaxe.tenNhaXe}}</td>
+    <td>{{vexe.soLuong}}</td>
+
+    <td>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Đặt vé
+      </button>
+    <button type="button" class="btn btn-primary" [routerLink]="['/vexe/edit',vexe.id]">Edit</button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+              (click)="showMess(vexe.id)">
+        DELETE
+      </button>
+    </td>
+  </tr>
+</table>
+
+<!-- phan trang -->
+<div style="justify-content: space-around;display: flex;">
+  <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="color: red">
+        DO YOU WANT TO DELETE  ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="deleteVexe()" data-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

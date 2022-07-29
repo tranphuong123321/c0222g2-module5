@@ -1,0 +1,89 @@
+<div class="container">
+  <h1 style="text-align: center">Cập nhật thông tin vé xe</h1>
+
+  <form [formGroup]="vexeForm" (ngSubmit)="updateVexe(id)">
+    <div class="form-group">
+      <label  >giaVe:</label>
+      <input type="text"  formControlName="giaVe" class="form-control"   >
+      <small *ngIf="vexeForm.controls.giaVe.hasError('required') && vexeForm.controls.giaVe.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="vexeForm.controls.giaVe.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label  >diemDi:</label>
+      <input type="text"  formControlName="diemDi" class="form-control"   >
+      <small *ngIf="vexeForm.controls.diemDi.hasError('required') && vexeForm.controls.diemDi.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="vexeForm.controls.diemDi.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label  >diemDen:</label>
+      <input type="text"  formControlName="diemDi" class="form-control"   >
+      <small *ngIf="vexeForm.controls.diemDen.hasError('required') && vexeForm.controls.diemDen.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="vexeForm.controls.diemDen.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label  >ngayDi:</label>
+      <input type="text"  formControlName="diemDi" class="form-control"   >
+      <small *ngIf="vexeForm.controls.ngayDi.hasError('required') && vexeForm.controls.ngayDi.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="vexeForm.controls.ngayDi.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label  >gioDi:</label>
+      <input type="text"  formControlName="gioDi" class="form-control"   >
+      <small *ngIf="vexeForm.controls.gioDi.hasError('required') && vexeForm.controls.gioDi.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="vexeForm.controls.gioDi.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label >Danh mục sản phẩm</label>
+      <select class="form-control" formControlName="nhaxe" [compareWith]="equals">
+        <option selected [value]="null" disabled>Chọn danh mục sản phẩm</option>
+        <option [ngValue]="nhaxe" *ngFor="let nhaxe of nhaxes">{{nhaxe.tenNhaXe}}</option>
+      </select>
+      <small *ngIf="vexeForm.controls.nhaxe.hasError('required') && vexeForm.controls.nhaxe.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label  >soLuong:</label>
+      <input type="text"  formControlName="soLuong" class="form-control"   >
+      <small *ngIf="vexeForm.controls.soLuong.hasError('required') && vexeForm.controls.soLuong.touched" style="color: red">
+        * Cannot be left blank
+      </small>
+      <small *ngIf="vexeForm.controls.soLuong.hasError('pattern')" style="color: red">
+        * Malformed
+      </small>
+    </div>
+
+
+
+
+
+
+    <button [disabled]="!vexeForm.valid" type="submit" class="btn btn-primary">Edit</button>
+  </form>
+</div>
