@@ -45,14 +45,14 @@
       "id": 3
     },
     {
-      "name": "gfgfg",
-      "price": "54545",
-      "description": "gfgfg",
+      "name": "dell 7000",
+      "price": "32323",
+      "description": "con hang",
       "category": {
         "name": "laptop",
         "id": 1
       },
-      "id": 4
+      "id": 6
     }
   ]
 }

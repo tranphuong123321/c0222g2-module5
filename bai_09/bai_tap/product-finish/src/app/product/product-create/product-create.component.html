@@ -41,6 +41,7 @@
     <select class="form-control" formControlName="category">
       <option selected [value]="null" disabled>Chọn danh mục sản phẩm</option>
       <option [ngValue]="category" *ngFor="let category of categories">{{category.name}}</option>
+      <!--        <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>-->
     </select>
     <small *ngIf="productForm.controls.category.hasError('required') && productForm.controls.category.touched" style="color: red">
       * Cannot be left blank

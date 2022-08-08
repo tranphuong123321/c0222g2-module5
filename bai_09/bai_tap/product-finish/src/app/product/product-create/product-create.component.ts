@@ -5,6 +5,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Category} from '../../model/category';
 import {Router} from '@angular/router';
 import {CategoryService} from '../../service/category.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-create',
@@ -22,7 +23,8 @@ export class ProductCreateComponent implements OnInit {
 
   constructor(private productService: ProductService,
               private router: Router,
-              private categoryService: CategoryService) {
+              private categoryService: CategoryService,
+              private toast: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -34,7 +36,7 @@ export class ProductCreateComponent implements OnInit {
     this.productService.saveProduct(product).subscribe(() => {
       this.productForm.reset();
       this.router.navigateByUrl('/product/list');
-      alert('Tạo mới thành công');
+      this.toast.success('Thêm mới thành công');
     }, e => console.log(e));
   }
 

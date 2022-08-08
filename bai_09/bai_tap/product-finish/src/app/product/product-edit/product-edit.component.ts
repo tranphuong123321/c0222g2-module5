@@ -4,6 +4,7 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Category} from '../../model/category';
 import {CategoryService} from '../../service/category.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-edit',
@@ -22,7 +23,8 @@ export class ProductEditComponent implements OnInit {
   constructor(private productService: ProductService,
               private activatedRoute: ActivatedRoute,
               private router: Router,
-              private categoryService: CategoryService) {
+              private categoryService: CategoryService,
+              private toast: ToastrService) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
       this.getProduct(this.id);
@@ -48,7 +50,7 @@ export class ProductEditComponent implements OnInit {
     const product = this.productForm.value;
     this.productService.updateProduct(id, product).subscribe(() => {
       this.router.navigate(['/product/list']);
-      alert('Cập nhật thành công');
+      this.toast.success('Cập nhật thành công');
     });
   }
   getCategory() {

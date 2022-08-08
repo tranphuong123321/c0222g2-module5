@@ -1,5 +1,10 @@
 <h1 style="text-align: center">Danh sách sản phẩm</h1>
-<button type="button" class="btn btn-primary" routerLink="/product/create">Tạo mới sản phẩm</button>
+<div>
+  <button type="button" class="btn btn-primary" routerLink="/product/create">Tạo mới sản phẩm</button> &nbsp;
+  <label >Search:</label>
+  <input type="text" (keydown.enter)="getString($event.target.value)">
+</div>
+
 <table id="customers" style="border-collapse: collapse;">
   <tr>
     <th>STT</th>
@@ -25,7 +30,7 @@
   </tr>
 </table>
 
-
+<!-- phan trang -->
 <div style="justify-content: space-around;display: flex;">
   <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
 </div>

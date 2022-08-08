@@ -1,0 +1,11 @@
+<button type="button" class="btn btn-primary" routerLink="/animal/create">Tạo mới animal </button>
+<table>
+  <tr>
+    <th>hinh anh</th>
+    <th>ten</th>
+  </tr>
+  <tr *ngFor="let animal of animals" >
+    <td><img [src]="animal.img" height="50"></td>
+    <td>{{animal.name}}</td>
+  </tr>
+</table>
